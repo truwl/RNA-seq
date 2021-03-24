@@ -5,5 +5,5 @@ samples:
         readgroups:
           - id: rg1
             reads:
-              R1: tests/data/rna3/R1.fq.gz
-              R2: tests/data/rna3/R2.fq.gz
+              R1: https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/rna3/R1.fq.gz
+              R2: https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/rna3/R2.fq.gz
