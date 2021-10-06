@@ -16,6 +16,11 @@ RNAseq.
     <i>File </i><br />
     A YAML file describing the docker image used for the tasks. The dockerImages.yml provided with the pipeline is recommended.
 </dd>
+<dt id="RNAseq.expression.mergeStringtieGtf.referenceAnnotation"><a href="#RNAseq.expression.mergeStringtieGtf.referenceAnnotation">RNAseq.expression.mergeStringtieGtf.referenceAnnotation</a></dt>
+<dd>
+    <i>File? </i><br />
+    The GTF file to compare with.
+</dd>
 <dt id="RNAseq.hisat2Index"><a href="#RNAseq.hisat2Index">RNAseq.hisat2Index</a></dt>
 <dd>
     <i>Array[File]+? </i><br />
@@ -29,17 +34,17 @@ RNAseq.
 <dt id="RNAseq.referenceFasta"><a href="#RNAseq.referenceFasta">RNAseq.referenceFasta</a></dt>
 <dd>
     <i>File </i><br />
-    The reference fasta file
+    The reference fasta file.
 </dd>
 <dt id="RNAseq.referenceFastaDict"><a href="#RNAseq.referenceFastaDict">RNAseq.referenceFastaDict</a></dt>
 <dd>
     <i>File </i><br />
-    Sequence dictionary (.dict) file of the reference
+    Sequence dictionary (.dict) file of the reference.
 </dd>
 <dt id="RNAseq.referenceFastaFai"><a href="#RNAseq.referenceFastaFai">RNAseq.referenceFastaFai</a></dt>
 <dd>
     <i>File </i><br />
-    Fasta index (.fai) file of the reference
+    Fasta index (.fai) file of the reference.
 </dd>
 <dt id="RNAseq.sampleConfigFile"><a href="#RNAseq.sampleConfigFile">RNAseq.sampleConfigFile</a></dt>
 <dd>
@@ -83,17 +88,22 @@ RNAseq.
 <dt id="RNAseq.dbsnpVCF"><a href="#RNAseq.dbsnpVCF">RNAseq.dbsnpVCF</a></dt>
 <dd>
     <i>File? </i><br />
-    dbsnp VCF file used for checking known sites
+    dbsnp VCF file used for checking known sites.
 </dd>
 <dt id="RNAseq.dbsnpVCFIndex"><a href="#RNAseq.dbsnpVCFIndex">RNAseq.dbsnpVCFIndex</a></dt>
 <dd>
     <i>File? </i><br />
-    Index (.tbi) file for the dbsnp VCF
+    Index (.tbi) file for the dbsnp VCF.
 </dd>
 <dt id="RNAseq.detectNovelTranscripts"><a href="#RNAseq.detectNovelTranscripts">RNAseq.detectNovelTranscripts</a></dt>
 <dd>
     <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
     Whether or not a transcripts assembly should be used. If set to true Stringtie will be used to create a new GTF file based on the BAM files. This generated GTF file will be used for expression quantification. If `referenceGtfFile` is also provided this reference GTF will be used to guide the assembly.
+</dd>
+<dt id="RNAseq.dgeFiles"><a href="#RNAseq.dgeFiles">RNAseq.dgeFiles</a></dt>
+<dd>
+    <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
+    Whether or not input files for DGE should be generated.
 </dd>
 <dt id="RNAseq.expression.stringtieAssembly.geneAbundanceFile"><a href="#RNAseq.expression.stringtieAssembly.geneAbundanceFile">RNAseq.expression.stringtieAssembly.geneAbundanceFile</a></dt>
 <dd>
@@ -119,6 +129,11 @@ RNAseq.
 <dd>
     <i>File? </i><br />
     A refflat files describing the genes. If this is defined RNAseq metrics will be collected.
+</dd>
+<dt id="RNAseq.runStringtieQuantification"><a href="#RNAseq.runStringtieQuantification">RNAseq.runStringtieQuantification</a></dt>
+<dd>
+    <i>Boolean </i><i>&mdash; Default:</i> <code>true</code><br />
+    Option to disable running stringtie for quantification. This does not affect the usage of stringtie for novel transcript detection.
 </dd>
 <dt id="RNAseq.sampleJobs.bamMetrics.ampliconIntervals"><a href="#RNAseq.sampleJobs.bamMetrics.ampliconIntervals">RNAseq.sampleJobs.bamMetrics.ampliconIntervals</a></dt>
 <dd>
@@ -158,7 +173,7 @@ RNAseq.
 <dt id="RNAseq.variantcalling.callAutosomal.pedigree"><a href="#RNAseq.variantcalling.callAutosomal.pedigree">RNAseq.variantcalling.callAutosomal.pedigree</a></dt>
 <dd>
     <i>File? </i><br />
-    Pedigree file for determining the population "founders"
+    Pedigree file for determining the population "founders".
 </dd>
 <dt id="RNAseq.variantcalling.callAutosomal.ploidy"><a href="#RNAseq.variantcalling.callAutosomal.ploidy">RNAseq.variantcalling.callAutosomal.ploidy</a></dt>
 <dd>
@@ -173,7 +188,7 @@ RNAseq.
 <dt id="RNAseq.variantcalling.callX.pedigree"><a href="#RNAseq.variantcalling.callX.pedigree">RNAseq.variantcalling.callX.pedigree</a></dt>
 <dd>
     <i>File? </i><br />
-    Pedigree file for determining the population "founders"
+    Pedigree file for determining the population "founders".
 </dd>
 <dt id="RNAseq.variantcalling.callY.excludeIntervalList"><a href="#RNAseq.variantcalling.callY.excludeIntervalList">RNAseq.variantcalling.callY.excludeIntervalList</a></dt>
 <dd>
@@ -183,7 +198,7 @@ RNAseq.
 <dt id="RNAseq.variantcalling.callY.pedigree"><a href="#RNAseq.variantcalling.callY.pedigree">RNAseq.variantcalling.callY.pedigree</a></dt>
 <dd>
     <i>File? </i><br />
-    Pedigree file for determining the population "founders"
+    Pedigree file for determining the population "founders".
 </dd>
 <dt id="RNAseq.variantcalling.gvcf"><a href="#RNAseq.variantcalling.gvcf">RNAseq.variantcalling.gvcf</a></dt>
 <dd>
@@ -296,45 +311,55 @@ RNAseq.
     <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
     Whether or not UMI deduplication stats should be collected. This will potentially cause a massive increase in memory usage of the deduplication step.
 </dd>
-<dt id="RNAseq.ConvertDockerTagsFile.dockerImage"><a href="#RNAseq.ConvertDockerTagsFile.dockerImage">RNAseq.ConvertDockerTagsFile.dockerImage</a></dt>
+<dt id="RNAseq.convertDockerTagsFile.dockerImage"><a href="#RNAseq.convertDockerTagsFile.dockerImage">RNAseq.convertDockerTagsFile.dockerImage</a></dt>
 <dd>
-    <i>String </i><i>&mdash; Default:</i> <code>"quay.io/biocontainers/biowdl-input-converter:0.2.1--py_0"</code><br />
+    <i>String </i><i>&mdash; Default:</i> <code>"quay.io/biocontainers/biowdl-input-converter:0.3.0--pyhdfd78af_0"</code><br />
     The docker image used for this task. Changing this may result in errors which the developers may choose not to address.
 </dd>
-<dt id="RNAseq.ConvertDockerTagsFile.memory"><a href="#RNAseq.ConvertDockerTagsFile.memory">RNAseq.ConvertDockerTagsFile.memory</a></dt>
+<dt id="RNAseq.convertDockerTagsFile.memory"><a href="#RNAseq.convertDockerTagsFile.memory">RNAseq.convertDockerTagsFile.memory</a></dt>
 <dd>
     <i>String </i><i>&mdash; Default:</i> <code>"128M"</code><br />
     The maximum amount of memory the job will need.
 </dd>
-<dt id="RNAseq.ConvertDockerTagsFile.timeMinutes"><a href="#RNAseq.ConvertDockerTagsFile.timeMinutes">RNAseq.ConvertDockerTagsFile.timeMinutes</a></dt>
+<dt id="RNAseq.convertDockerTagsFile.timeMinutes"><a href="#RNAseq.convertDockerTagsFile.timeMinutes">RNAseq.convertDockerTagsFile.timeMinutes</a></dt>
 <dd>
     <i>Int </i><i>&mdash; Default:</i> <code>1</code><br />
     The maximum amount of time the job will run in minutes.
 </dd>
-<dt id="RNAseq.ConvertSampleConfig.checkFileMd5sums"><a href="#RNAseq.ConvertSampleConfig.checkFileMd5sums">RNAseq.ConvertSampleConfig.checkFileMd5sums</a></dt>
+<dt id="RNAseq.convertSampleConfig.checkFileMd5sums"><a href="#RNAseq.convertSampleConfig.checkFileMd5sums">RNAseq.convertSampleConfig.checkFileMd5sums</a></dt>
 <dd>
     <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
     Whether or not the MD5 sums of the files mentioned in the samplesheet should be checked.
 </dd>
-<dt id="RNAseq.ConvertSampleConfig.dockerImage"><a href="#RNAseq.ConvertSampleConfig.dockerImage">RNAseq.ConvertSampleConfig.dockerImage</a></dt>
+<dt id="RNAseq.convertSampleConfig.dockerImage"><a href="#RNAseq.convertSampleConfig.dockerImage">RNAseq.convertSampleConfig.dockerImage</a></dt>
 <dd>
-    <i>String </i><i>&mdash; Default:</i> <code>"quay.io/biocontainers/biowdl-input-converter:0.2.1--py_0"</code><br />
+    <i>String </i><i>&mdash; Default:</i> <code>"quay.io/biocontainers/biowdl-input-converter:0.3.0--pyhdfd78af_0"</code><br />
     The docker image used for this task. Changing this may result in errors which the developers may choose not to address.
 </dd>
-<dt id="RNAseq.ConvertSampleConfig.old"><a href="#RNAseq.ConvertSampleConfig.old">RNAseq.ConvertSampleConfig.old</a></dt>
+<dt id="RNAseq.convertSampleConfig.memory"><a href="#RNAseq.convertSampleConfig.memory">RNAseq.convertSampleConfig.memory</a></dt>
+<dd>
+    <i>String </i><i>&mdash; Default:</i> <code>"128M"</code><br />
+    The amount of memory needed for the job.
+</dd>
+<dt id="RNAseq.convertSampleConfig.old"><a href="#RNAseq.convertSampleConfig.old">RNAseq.convertSampleConfig.old</a></dt>
 <dd>
     <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
     Whether or not the old samplesheet format should be used.
 </dd>
-<dt id="RNAseq.ConvertSampleConfig.skipFileCheck"><a href="#RNAseq.ConvertSampleConfig.skipFileCheck">RNAseq.ConvertSampleConfig.skipFileCheck</a></dt>
+<dt id="RNAseq.convertSampleConfig.skipFileCheck"><a href="#RNAseq.convertSampleConfig.skipFileCheck">RNAseq.convertSampleConfig.skipFileCheck</a></dt>
 <dd>
     <i>Boolean </i><i>&mdash; Default:</i> <code>true</code><br />
     Whether or not the existance of the files mentioned in the samplesheet should be checked.
 </dd>
-<dt id="RNAseq.ConvertSampleConfig.timeMinutes"><a href="#RNAseq.ConvertSampleConfig.timeMinutes">RNAseq.ConvertSampleConfig.timeMinutes</a></dt>
+<dt id="RNAseq.convertSampleConfig.timeMinutes"><a href="#RNAseq.convertSampleConfig.timeMinutes">RNAseq.convertSampleConfig.timeMinutes</a></dt>
 <dd>
     <i>Int </i><i>&mdash; Default:</i> <code>1</code><br />
     The maximum amount of time the job will run in minutes.
+</dd>
+<dt id="RNAseq.CPAT.memory"><a href="#RNAseq.CPAT.memory">RNAseq.CPAT.memory</a></dt>
+<dd>
+    <i>String </i><i>&mdash; Default:</i> <code>"4G"</code><br />
+    The amount of memory available to the job.
 </dd>
 <dt id="RNAseq.CPAT.startCodons"><a href="#RNAseq.CPAT.startCodons">RNAseq.CPAT.startCodons</a></dt>
 <dd>
@@ -349,6 +374,26 @@ RNAseq.
 <dt id="RNAseq.CPAT.timeMinutes"><a href="#RNAseq.CPAT.timeMinutes">RNAseq.CPAT.timeMinutes</a></dt>
 <dd>
     <i>Int </i><i>&mdash; Default:</i> <code>10 + ceil((size(gene,"G") * 30))</code><br />
+    The maximum amount of time the job will run in minutes.
+</dd>
+<dt id="RNAseq.createAnnotation.memory"><a href="#RNAseq.createAnnotation.memory">RNAseq.createAnnotation.memory</a></dt>
+<dd>
+    <i>String </i><i>&mdash; Default:</i> <code>"5G"</code><br />
+    The amount of memory this job will use.
+</dd>
+<dt id="RNAseq.createAnnotation.timeMinutes"><a href="#RNAseq.createAnnotation.timeMinutes">RNAseq.createAnnotation.timeMinutes</a></dt>
+<dd>
+    <i>Int </i><i>&mdash; Default:</i> <code>30</code><br />
+    The maximum amount of time the job will run in minutes.
+</dd>
+<dt id="RNAseq.createDesign.memory"><a href="#RNAseq.createDesign.memory">RNAseq.createDesign.memory</a></dt>
+<dd>
+    <i>String </i><i>&mdash; Default:</i> <code>"5G"</code><br />
+    The amount of memory this job will use.
+</dd>
+<dt id="RNAseq.createDesign.timeMinutes"><a href="#RNAseq.createDesign.timeMinutes">RNAseq.createDesign.timeMinutes</a></dt>
+<dd>
+    <i>Int </i><i>&mdash; Default:</i> <code>30</code><br />
     The maximum amount of time the job will run in minutes.
 </dd>
 <dt id="RNAseq.expression.additionalAttributes"><a href="#RNAseq.expression.additionalAttributes">RNAseq.expression.additionalAttributes</a></dt>
@@ -388,7 +433,7 @@ RNAseq.
 </dd>
 <dt id="RNAseq.expression.htSeqCount.timeMinutes"><a href="#RNAseq.expression.htSeqCount.timeMinutes">RNAseq.expression.htSeqCount.timeMinutes</a></dt>
 <dd>
-    <i>Int </i><i>&mdash; Default:</i> <code>10 + ceil((size(inputBams,"G") * 60))</code><br />
+    <i>Int </i><i>&mdash; Default:</i> <code>1440</code><br />
     The maximum amount of time the job will run in minutes.
 </dd>
 <dt id="RNAseq.expression.mergedHTSeqFragmentsPerGenes.featureAttribute"><a href="#RNAseq.expression.mergedHTSeqFragmentsPerGenes.featureAttribute">RNAseq.expression.mergedHTSeqFragmentsPerGenes.featureAttribute</a></dt>
@@ -409,12 +454,17 @@ RNAseq.
 <dt id="RNAseq.expression.mergedHTSeqFragmentsPerGenes.memoryGb"><a href="#RNAseq.expression.mergedHTSeqFragmentsPerGenes.memoryGb">RNAseq.expression.mergedHTSeqFragmentsPerGenes.memoryGb</a></dt>
 <dd>
     <i>Int </i><i>&mdash; Default:</i> <code>4 + ceil((0.5 * length(inputTables)))</code><br />
-    The maximum amount of memory the job will need in GB
+    The maximum amount of memory the job will need in GB.
 </dd>
 <dt id="RNAseq.expression.mergedHTSeqFragmentsPerGenes.separator"><a href="#RNAseq.expression.mergedHTSeqFragmentsPerGenes.separator">RNAseq.expression.mergedHTSeqFragmentsPerGenes.separator</a></dt>
 <dd>
     <i>Int? </i><br />
     Equivalent to the -s option of collect-columns.
+</dd>
+<dt id="RNAseq.expression.mergedHTSeqFragmentsPerGenes.sumOnDuplicateId"><a href="#RNAseq.expression.mergedHTSeqFragmentsPerGenes.sumOnDuplicateId">RNAseq.expression.mergedHTSeqFragmentsPerGenes.sumOnDuplicateId</a></dt>
+<dd>
+    <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
+    Equivalent to the -S flag of collect-columns.
 </dd>
 <dt id="RNAseq.expression.mergedHTSeqFragmentsPerGenes.timeMinutes"><a href="#RNAseq.expression.mergedHTSeqFragmentsPerGenes.timeMinutes">RNAseq.expression.mergedHTSeqFragmentsPerGenes.timeMinutes</a></dt>
 <dd>
@@ -439,7 +489,7 @@ RNAseq.
 <dt id="RNAseq.expression.mergedStringtieFPKMs.memoryGb"><a href="#RNAseq.expression.mergedStringtieFPKMs.memoryGb">RNAseq.expression.mergedStringtieFPKMs.memoryGb</a></dt>
 <dd>
     <i>Int </i><i>&mdash; Default:</i> <code>4 + ceil((0.5 * length(inputTables)))</code><br />
-    The maximum amount of memory the job will need in GB
+    The maximum amount of memory the job will need in GB.
 </dd>
 <dt id="RNAseq.expression.mergedStringtieFPKMs.separator"><a href="#RNAseq.expression.mergedStringtieFPKMs.separator">RNAseq.expression.mergedStringtieFPKMs.separator</a></dt>
 <dd>
@@ -464,7 +514,7 @@ RNAseq.
 <dt id="RNAseq.expression.mergedStringtieTPMs.memoryGb"><a href="#RNAseq.expression.mergedStringtieTPMs.memoryGb">RNAseq.expression.mergedStringtieTPMs.memoryGb</a></dt>
 <dd>
     <i>Int </i><i>&mdash; Default:</i> <code>4 + ceil((0.5 * length(inputTables)))</code><br />
-    The maximum amount of memory the job will need in GB
+    The maximum amount of memory the job will need in GB.
 </dd>
 <dt id="RNAseq.expression.mergedStringtieTPMs.separator"><a href="#RNAseq.expression.mergedStringtieTPMs.separator">RNAseq.expression.mergedStringtieTPMs.separator</a></dt>
 <dd>
@@ -476,55 +526,100 @@ RNAseq.
     <i>Int </i><i>&mdash; Default:</i> <code>10</code><br />
     The maximum amount of time the job will run in minutes.
 </dd>
-<dt id="RNAseq.expression.mergeStringtieGtf.keepMergedTranscriptsWithRetainedIntrons"><a href="#RNAseq.expression.mergeStringtieGtf.keepMergedTranscriptsWithRetainedIntrons">RNAseq.expression.mergeStringtieGtf.keepMergedTranscriptsWithRetainedIntrons</a></dt>
+<dt id="RNAseq.expression.mergeStringtieGtf.A"><a href="#RNAseq.expression.mergeStringtieGtf.A">RNAseq.expression.mergeStringtieGtf.A</a></dt>
 <dd>
     <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
-    Equivalent to the -i flag of 'stringtie --merge'.
+    Equivalent to gffcompare's `-A` flag.
 </dd>
-<dt id="RNAseq.expression.mergeStringtieGtf.label"><a href="#RNAseq.expression.mergeStringtieGtf.label">RNAseq.expression.mergeStringtieGtf.label</a></dt>
+<dt id="RNAseq.expression.mergeStringtieGtf.debugMode"><a href="#RNAseq.expression.mergeStringtieGtf.debugMode">RNAseq.expression.mergeStringtieGtf.debugMode</a></dt>
 <dd>
-    <i>String? </i><br />
-    Equivalent to the -l option of 'stringtie --merge'.
+    <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
+    Equivalent to gffcompare's `-D` flag.
+</dd>
+<dt id="RNAseq.expression.mergeStringtieGtf.discardSingleExonReferenceTranscripts"><a href="#RNAseq.expression.mergeStringtieGtf.discardSingleExonReferenceTranscripts">RNAseq.expression.mergeStringtieGtf.discardSingleExonReferenceTranscripts</a></dt>
+<dd>
+    <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
+    Equivalent to gffcompare's `-N` flag.
+</dd>
+<dt id="RNAseq.expression.mergeStringtieGtf.discardSingleExonTransfragsAndReferenceTranscripts"><a href="#RNAseq.expression.mergeStringtieGtf.discardSingleExonTransfragsAndReferenceTranscripts">RNAseq.expression.mergeStringtieGtf.discardSingleExonTransfragsAndReferenceTranscripts</a></dt>
+<dd>
+    <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
+    Equivalent to gffcompare's `-M` flag.
+</dd>
+<dt id="RNAseq.expression.mergeStringtieGtf.genomeSequences"><a href="#RNAseq.expression.mergeStringtieGtf.genomeSequences">RNAseq.expression.mergeStringtieGtf.genomeSequences</a></dt>
+<dd>
+    <i>File? </i><br />
+    Equivalent to gffcompare's `-s` option.
+</dd>
+<dt id="RNAseq.expression.mergeStringtieGtf.inputGtfList"><a href="#RNAseq.expression.mergeStringtieGtf.inputGtfList">RNAseq.expression.mergeStringtieGtf.inputGtfList</a></dt>
+<dd>
+    <i>File? </i><br />
+    Equivalent to gffcompare's `-i` option.
+</dd>
+<dt id="RNAseq.expression.mergeStringtieGtf.K"><a href="#RNAseq.expression.mergeStringtieGtf.K">RNAseq.expression.mergeStringtieGtf.K</a></dt>
+<dd>
+    <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
+    Equivalent to gffcompare's `-K` flag.
+</dd>
+<dt id="RNAseq.expression.mergeStringtieGtf.maxDistanceFreeEndsTerminalExons"><a href="#RNAseq.expression.mergeStringtieGtf.maxDistanceFreeEndsTerminalExons">RNAseq.expression.mergeStringtieGtf.maxDistanceFreeEndsTerminalExons</a></dt>
+<dd>
+    <i>Int? </i><br />
+    Equivalent to gffcompare's `-e` option.
+</dd>
+<dt id="RNAseq.expression.mergeStringtieGtf.maxDistanceGroupingTranscriptStartSites"><a href="#RNAseq.expression.mergeStringtieGtf.maxDistanceGroupingTranscriptStartSites">RNAseq.expression.mergeStringtieGtf.maxDistanceGroupingTranscriptStartSites</a></dt>
+<dd>
+    <i>Int? </i><br />
+    Equivalent to gffcompare's `-d` option.
 </dd>
 <dt id="RNAseq.expression.mergeStringtieGtf.memory"><a href="#RNAseq.expression.mergeStringtieGtf.memory">RNAseq.expression.mergeStringtieGtf.memory</a></dt>
 <dd>
-    <i>String </i><i>&mdash; Default:</i> <code>"10G"</code><br />
-    The amount of memory needed for this task in GB.
+    <i>String </i><i>&mdash; Default:</i> <code>"4G"</code><br />
+    The amount of memory available to the job.
 </dd>
-<dt id="RNAseq.expression.mergeStringtieGtf.minimumCoverage"><a href="#RNAseq.expression.mergeStringtieGtf.minimumCoverage">RNAseq.expression.mergeStringtieGtf.minimumCoverage</a></dt>
+<dt id="RNAseq.expression.mergeStringtieGtf.namePrefix"><a href="#RNAseq.expression.mergeStringtieGtf.namePrefix">RNAseq.expression.mergeStringtieGtf.namePrefix</a></dt>
 <dd>
-    <i>Float? </i><br />
-    Equivalent to the -c option of 'stringtie --merge'.
+    <i>String? </i><br />
+    Equivalent to gffcompare's `-p` option.
 </dd>
-<dt id="RNAseq.expression.mergeStringtieGtf.minimumFPKM"><a href="#RNAseq.expression.mergeStringtieGtf.minimumFPKM">RNAseq.expression.mergeStringtieGtf.minimumFPKM</a></dt>
+<dt id="RNAseq.expression.mergeStringtieGtf.noTmap"><a href="#RNAseq.expression.mergeStringtieGtf.noTmap">RNAseq.expression.mergeStringtieGtf.noTmap</a></dt>
 <dd>
-    <i>Float? </i><br />
-    Equivalent to the -F option of 'stringtie --merge'.
+    <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
+    Equivalent to gffcompare's `-T` flag.
 </dd>
-<dt id="RNAseq.expression.mergeStringtieGtf.minimumIsoformFraction"><a href="#RNAseq.expression.mergeStringtieGtf.minimumIsoformFraction">RNAseq.expression.mergeStringtieGtf.minimumIsoformFraction</a></dt>
+<dt id="RNAseq.expression.mergeStringtieGtf.precisionCorrection"><a href="#RNAseq.expression.mergeStringtieGtf.precisionCorrection">RNAseq.expression.mergeStringtieGtf.precisionCorrection</a></dt>
 <dd>
-    <i>Float? </i><br />
-    Equivalent to the -f option of 'stringtie --merge'.
+    <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
+    Equivalent to gffcompare's `-Q` flag.
 </dd>
-<dt id="RNAseq.expression.mergeStringtieGtf.minimumLength"><a href="#RNAseq.expression.mergeStringtieGtf.minimumLength">RNAseq.expression.mergeStringtieGtf.minimumLength</a></dt>
+<dt id="RNAseq.expression.mergeStringtieGtf.snCorrection"><a href="#RNAseq.expression.mergeStringtieGtf.snCorrection">RNAseq.expression.mergeStringtieGtf.snCorrection</a></dt>
 <dd>
-    <i>Int? </i><br />
-    Equivalent to the -m option of 'stringtie --merge'.
-</dd>
-<dt id="RNAseq.expression.mergeStringtieGtf.minimumTPM"><a href="#RNAseq.expression.mergeStringtieGtf.minimumTPM">RNAseq.expression.mergeStringtieGtf.minimumTPM</a></dt>
-<dd>
-    <i>Float? </i><br />
-    Equivalent to the -T option of 'stringtie --merge'.
+    <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
+    Equivalent to gffcompare's `-R` flag.
 </dd>
 <dt id="RNAseq.expression.mergeStringtieGtf.timeMinutes"><a href="#RNAseq.expression.mergeStringtieGtf.timeMinutes">RNAseq.expression.mergeStringtieGtf.timeMinutes</a></dt>
 <dd>
-    <i>Int </i><i>&mdash; Default:</i> <code>1 + ceil((size(gtfFiles,"G") * 20))</code><br />
+    <i>Int </i><i>&mdash; Default:</i> <code>1 + ceil((size(inputGtfFiles,"G") * 30))</code><br />
     The maximum amount of time the job will run in minutes.
+</dd>
+<dt id="RNAseq.expression.mergeStringtieGtf.verbose"><a href="#RNAseq.expression.mergeStringtieGtf.verbose">RNAseq.expression.mergeStringtieGtf.verbose</a></dt>
+<dd>
+    <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
+    Equivalent to gffcompare's `-V` flag.
+</dd>
+<dt id="RNAseq.expression.mergeStringtieGtf.X"><a href="#RNAseq.expression.mergeStringtieGtf.X">RNAseq.expression.mergeStringtieGtf.X</a></dt>
+<dd>
+    <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
+    Equivalent to gffcompare's `-X` flag.
 </dd>
 <dt id="RNAseq.expression.stringtie.memory"><a href="#RNAseq.expression.stringtie.memory">RNAseq.expression.stringtie.memory</a></dt>
 <dd>
     <i>String </i><i>&mdash; Default:</i> <code>"2G"</code><br />
     The amount of memory needed for this task in GB.
+</dd>
+<dt id="RNAseq.expression.stringtie.minimumCoverage"><a href="#RNAseq.expression.stringtie.minimumCoverage">RNAseq.expression.stringtie.minimumCoverage</a></dt>
+<dd>
+    <i>Float? </i><br />
+    The minimum coverage for a transcript to be shown in the output.
 </dd>
 <dt id="RNAseq.expression.stringtie.threads"><a href="#RNAseq.expression.stringtie.threads">RNAseq.expression.stringtie.threads</a></dt>
 <dd>
@@ -540,6 +635,11 @@ RNAseq.
 <dd>
     <i>String </i><i>&mdash; Default:</i> <code>"2G"</code><br />
     The amount of memory needed for this task in GB.
+</dd>
+<dt id="RNAseq.expression.stringtieAssembly.minimumCoverage"><a href="#RNAseq.expression.stringtieAssembly.minimumCoverage">RNAseq.expression.stringtieAssembly.minimumCoverage</a></dt>
+<dd>
+    <i>Float? </i><br />
+    The minimum coverage for a transcript to be shown in the output.
 </dd>
 <dt id="RNAseq.expression.stringtieAssembly.threads"><a href="#RNAseq.expression.stringtieAssembly.threads">RNAseq.expression.stringtieAssembly.threads</a></dt>
 <dd>
@@ -601,6 +701,11 @@ RNAseq.
     <i>Int? </i><br />
     Equivalent to gffcompare's `-d` option.
 </dd>
+<dt id="RNAseq.GffCompare.memory"><a href="#RNAseq.GffCompare.memory">RNAseq.GffCompare.memory</a></dt>
+<dd>
+    <i>String </i><i>&mdash; Default:</i> <code>"4G"</code><br />
+    The amount of memory available to the job.
+</dd>
 <dt id="RNAseq.GffCompare.namePrefix"><a href="#RNAseq.GffCompare.namePrefix">RNAseq.GffCompare.namePrefix</a></dt>
 <dd>
     <i>String? </i><br />
@@ -651,6 +756,11 @@ RNAseq.
     <i>String? </i><br />
     The location the filtered GFF should be written to.
 </dd>
+<dt id="RNAseq.gffreadTask.memory"><a href="#RNAseq.gffreadTask.memory">RNAseq.gffreadTask.memory</a></dt>
+<dd>
+    <i>String </i><i>&mdash; Default:</i> <code>"4G"</code><br />
+    The amount of memory available to the job.
+</dd>
 <dt id="RNAseq.gffreadTask.outputGtfFormat"><a href="#RNAseq.gffreadTask.outputGtfFormat">RNAseq.gffreadTask.outputGtfFormat</a></dt>
 <dd>
     <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
@@ -663,7 +773,7 @@ RNAseq.
 </dd>
 <dt id="RNAseq.gffreadTask.timeMinutes"><a href="#RNAseq.gffreadTask.timeMinutes">RNAseq.gffreadTask.timeMinutes</a></dt>
 <dd>
-    <i>Int </i><i>&mdash; Default:</i> <code>1 + ceil((size(inputGff) * 10))</code><br />
+    <i>Int </i><i>&mdash; Default:</i> <code>1 + ceil((size(inputGff,"G") * 10))</code><br />
     The maximum amount of time the job will run in minutes.
 </dd>
 <dt id="RNAseq.makeStarIndex.memory"><a href="#RNAseq.makeStarIndex.memory">RNAseq.makeStarIndex.memory</a></dt>
@@ -813,7 +923,7 @@ RNAseq.
 </dd>
 <dt id="RNAseq.multiqcTask.timeMinutes"><a href="#RNAseq.multiqcTask.timeMinutes">RNAseq.multiqcTask.timeMinutes</a></dt>
 <dd>
-    <i>Int </i><i>&mdash; Default:</i> <code>2 + ceil((size(reports,"G") * 8))</code><br />
+    <i>Int </i><i>&mdash; Default:</i> <code>10 + ceil((size(reports,"G") * 8))</code><br />
     The maximum amount of time the job will run in minutes.
 </dd>
 <dt id="RNAseq.multiqcTask.title"><a href="#RNAseq.multiqcTask.title">RNAseq.multiqcTask.title</a></dt>
@@ -1074,7 +1184,7 @@ RNAseq.
 <dt id="RNAseq.sampleJobs.markDuplicates.compressionLevel"><a href="#RNAseq.sampleJobs.markDuplicates.compressionLevel">RNAseq.sampleJobs.markDuplicates.compressionLevel</a></dt>
 <dd>
     <i>Int </i><i>&mdash; Default:</i> <code>1</code><br />
-    The compression level at which the BAM files are written
+    The compression level at which the BAM files are written.
 </dd>
 <dt id="RNAseq.sampleJobs.markDuplicates.createMd5File"><a href="#RNAseq.sampleJobs.markDuplicates.createMd5File">RNAseq.sampleJobs.markDuplicates.createMd5File</a></dt>
 <dd>
@@ -1114,7 +1224,7 @@ RNAseq.
 <dt id="RNAseq.sampleJobs.postUmiDedupMarkDuplicates.compressionLevel"><a href="#RNAseq.sampleJobs.postUmiDedupMarkDuplicates.compressionLevel">RNAseq.sampleJobs.postUmiDedupMarkDuplicates.compressionLevel</a></dt>
 <dd>
     <i>Int </i><i>&mdash; Default:</i> <code>1</code><br />
-    The compression level at which the BAM files are written
+    The compression level at which the BAM files are written.
 </dd>
 <dt id="RNAseq.sampleJobs.postUmiDedupMarkDuplicates.createMd5File"><a href="#RNAseq.sampleJobs.postUmiDedupMarkDuplicates.createMd5File">RNAseq.sampleJobs.postUmiDedupMarkDuplicates.createMd5File</a></dt>
 <dd>
@@ -1253,7 +1363,7 @@ RNAseq.
 </dd>
 <dt id="RNAseq.sampleJobs.qc.Cutadapt.memory"><a href="#RNAseq.sampleJobs.qc.Cutadapt.memory">RNAseq.sampleJobs.qc.Cutadapt.memory</a></dt>
 <dd>
-    <i>String </i><i>&mdash; Default:</i> <code>"~{300 + 100 * cores}M"</code><br />
+    <i>String </i><i>&mdash; Default:</i> <code>"5G"</code><br />
     The amount of memory this job will use.
 </dd>
 <dt id="RNAseq.sampleJobs.qc.Cutadapt.minimumLength"><a href="#RNAseq.sampleJobs.qc.Cutadapt.minimumLength">RNAseq.sampleJobs.qc.Cutadapt.minimumLength</a></dt>
@@ -1389,7 +1499,7 @@ RNAseq.
 <dt id="RNAseq.sampleJobs.qc.extractFastqcZip"><a href="#RNAseq.sampleJobs.qc.extractFastqcZip">RNAseq.sampleJobs.qc.extractFastqcZip</a></dt>
 <dd>
     <i>Boolean </i><i>&mdash; Default:</i> <code>false</code><br />
-    Whether to extract Fastqc's report zip files
+    Whether to extract Fastqc's report zip files.
 </dd>
 <dt id="RNAseq.sampleJobs.qc.FastqcRead1.adapters"><a href="#RNAseq.sampleJobs.qc.FastqcRead1.adapters">RNAseq.sampleJobs.qc.FastqcRead1.adapters</a></dt>
 <dd>
@@ -1766,6 +1876,11 @@ RNAseq.
     <i>Int </i><i>&mdash; Default:</i> <code>30 + ceil((size(inputBam,"G") * 30))</code><br />
     The maximum amount of time the job will run in minutes.
 </dd>
+<dt id="RNAseq.sampleJobs.umiDedup.tmpDir"><a href="#RNAseq.sampleJobs.umiDedup.tmpDir">RNAseq.sampleJobs.umiDedup.tmpDir</a></dt>
+<dd>
+    <i>String </i><i>&mdash; Default:</i> <code>"./umiToolsDedupTmpDir"</code><br />
+    Temporary directory.
+</dd>
 <dt id="RNAseq.sampleJobs.umiDedup.umiSeparator"><a href="#RNAseq.sampleJobs.umiDedup.umiSeparator">RNAseq.sampleJobs.umiDedup.umiSeparator</a></dt>
 <dd>
     <i>String? </i><br />
@@ -1809,7 +1924,7 @@ RNAseq.
 <dt id="RNAseq.variantcalling.callAutosomal.emitRefConfidence"><a href="#RNAseq.variantcalling.callAutosomal.emitRefConfidence">RNAseq.variantcalling.callAutosomal.emitRefConfidence</a></dt>
 <dd>
     <i>String </i><i>&mdash; Default:</i> <code>if gvcf then "GVCF" else "NONE"</code><br />
-    Whether to include reference calls. Three modes: 'NONE', 'BP_RESOLUTION' and 'GVCF'
+    Whether to include reference calls. Three modes: 'NONE', 'BP_RESOLUTION' and 'GVCF'.
 </dd>
 <dt id="RNAseq.variantcalling.callAutosomal.javaXmxMb"><a href="#RNAseq.variantcalling.callAutosomal.javaXmxMb">RNAseq.variantcalling.callAutosomal.javaXmxMb</a></dt>
 <dd>
@@ -1834,7 +1949,7 @@ RNAseq.
 <dt id="RNAseq.variantcalling.callX.emitRefConfidence"><a href="#RNAseq.variantcalling.callX.emitRefConfidence">RNAseq.variantcalling.callX.emitRefConfidence</a></dt>
 <dd>
     <i>String </i><i>&mdash; Default:</i> <code>if gvcf then "GVCF" else "NONE"</code><br />
-    Whether to include reference calls. Three modes: 'NONE', 'BP_RESOLUTION' and 'GVCF'
+    Whether to include reference calls. Three modes: 'NONE', 'BP_RESOLUTION' and 'GVCF'.
 </dd>
 <dt id="RNAseq.variantcalling.callX.javaXmxMb"><a href="#RNAseq.variantcalling.callX.javaXmxMb">RNAseq.variantcalling.callX.javaXmxMb</a></dt>
 <dd>
@@ -1859,7 +1974,7 @@ RNAseq.
 <dt id="RNAseq.variantcalling.callY.emitRefConfidence"><a href="#RNAseq.variantcalling.callY.emitRefConfidence">RNAseq.variantcalling.callY.emitRefConfidence</a></dt>
 <dd>
     <i>String </i><i>&mdash; Default:</i> <code>if gvcf then "GVCF" else "NONE"</code><br />
-    Whether to include reference calls. Three modes: 'NONE', 'BP_RESOLUTION' and 'GVCF'
+    Whether to include reference calls. Three modes: 'NONE', 'BP_RESOLUTION' and 'GVCF'.
 </dd>
 <dt id="RNAseq.variantcalling.callY.javaXmxMb"><a href="#RNAseq.variantcalling.callY.javaXmxMb">RNAseq.variantcalling.callY.javaXmxMb</a></dt>
 <dd>
@@ -1899,7 +2014,7 @@ RNAseq.
 <dt id="RNAseq.variantcalling.mergeSingleSampleVcf.compressionLevel"><a href="#RNAseq.variantcalling.mergeSingleSampleVcf.compressionLevel">RNAseq.variantcalling.mergeSingleSampleVcf.compressionLevel</a></dt>
 <dd>
     <i>Int </i><i>&mdash; Default:</i> <code>1</code><br />
-    The compression level at which the BAM files are written
+    The compression level at which the BAM files are written.
 </dd>
 <dt id="RNAseq.variantcalling.mergeSingleSampleVcf.javaXmx"><a href="#RNAseq.variantcalling.mergeSingleSampleVcf.javaXmx">RNAseq.variantcalling.mergeSingleSampleVcf.javaXmx</a></dt>
 <dd>
@@ -2031,12 +2146,12 @@ RNAseq.
 <dt id="RNAseq.XNonParRegions"><a href="#RNAseq.XNonParRegions">RNAseq.XNonParRegions</a></dt>
 <dd>
     <i>File? </i><br />
-    Bed file with the non-PAR regions of X for variant calling
+    Bed file with the non-PAR regions of X for variant calling.
 </dd>
 <dt id="RNAseq.YNonParRegions"><a href="#RNAseq.YNonParRegions">RNAseq.YNonParRegions</a></dt>
 <dd>
     <i>File? </i><br />
-    Bed file with the non-PAR regions of Y for variant calling
+    Bed file with the non-PAR regions of Y for variant calling.
 </dd>
 </dl>
 </details>
@@ -2064,14 +2179,13 @@ show them as being available inputs.
 * RNAseq.sampleJobs.star.outSAMtype
 * RNAseq.sampleJobs.star.readFilesCommand
 * RNAseq.sampleJobs.DONOTDEFINE
-* RNAseq.sampleJobs.qc.FastqcRead1.NoneFile
-* RNAseq.sampleJobs.qc.FastqcRead1.NoneArray
-* RNAseq.sampleJobs.qc.FastqcRead2.NoneFile
-* RNAseq.sampleJobs.qc.FastqcRead2.NoneArray
-* RNAseq.sampleJobs.qc.FastqcRead1After.NoneFile
-* RNAseq.sampleJobs.qc.FastqcRead1After.NoneArray
-* RNAseq.sampleJobs.qc.FastqcRead2After.NoneFile
-* RNAseq.sampleJobs.qc.FastqcRead2After.NoneArray
+* RNAseq.sampleJobs.qc.FastqcRead1.noneFile
+* RNAseq.sampleJobs.qc.FastqcRead1.noneArray
+* RNAseq.sampleJobs.qc.FastqcRead2.noneFile
+* RNAseq.sampleJobs.qc.FastqcRead2.noneArray
+* RNAseq.sampleJobs.qc.FastqcRead1After.noneFile
+* RNAseq.sampleJobs.qc.FastqcRead1After.noneArray
+* RNAseq.sampleJobs.qc.FastqcRead2After.noneFile
+* RNAseq.sampleJobs.qc.FastqcRead2After.noneArray
+* RNAseq.expression.mergeStringtieGtf.noneFile
 * RNAseq.GffCompare.noneFile
-* RNAseq.multiqcTask.finished
-* RNAseq.multiqcTask.dependencies
