@@ -38,7 +38,20 @@ import "tasks/star.wdl" as star
 
 workflow RNAseq {
     input {
-        File sampleConfigFile
+        SampleConfig sampleConfig
+
+#        samples:
+#          - id: rna3-paired-end
+#            libraries:
+#              - id: lib1
+#                readgroups:
+#                  - id: rg1
+#                    reads:
+#                      R1: tests/data/rna3/R1.fq.gz
+#                      R2: tests/data/rna3/R2.fq.gz
+
+
+
         String outputDir = "."
         File referenceFasta
         File referenceFastaFai
@@ -93,7 +106,7 @@ workflow RNAseq {
             outputFile = outputDir + "/samples.json"
     }
 
-    SampleConfig sampleConfig = read_json(convertSampleConfig.json)
+    #SampleConfig sampleConfig = read_json(convertSampleConfig.json)
 
     if (dgeFiles) {
         # Create design matrix template.
