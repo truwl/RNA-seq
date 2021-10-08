@@ -100,11 +100,11 @@ workflow RNAseq {
 
     Map[String, String] dockerImages = read_json(convertDockerTagsFile.json)
 
-    call biowdl.InputConverter as convertSampleConfig {
-        input:
-            samplesheet = sampleConfigFile,
-            outputFile = outputDir + "/samples.json"
-    }
+    #call biowdl.InputConverter as convertSampleConfig {
+    #    input:
+    #        samplesheet = sampleConfigFile,
+    #        outputFile = outputDir + "/samples.json"
+    #}
 
     #SampleConfig sampleConfig = read_json(convertSampleConfig.json)
 
