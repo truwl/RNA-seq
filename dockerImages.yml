@@ -61,4 +61,5 @@ tabix: "https://quay.io/biocontainers/tabix:0.2.6--ha92aebf_0"
 # "UMI-tools" uses a combined container that has both UMI-tools and samtools
 # quay.io/biocontainers/mulled-v2-509311a44630c01d9cb7d2ac5727725f51ea43af
 # this particular tag has versions umi_tools=0.5.5,samtools=1.9.
-umi-tools: "https://quay.io/biocontainers/mulled-v2-509311a44630c01d9cb7d2ac5727725f51ea43af:6089936aca6219b5bb5f54210ac5eb456c7503f2-0"
+#umi-tools: "https://quay.io/biocontainers/mulled-v2-509311a44630c01d9cb7d2ac5727725f51ea43af:6089936aca6219b5bb5f54210ac5eb456c7503f2-0"
+umi-tools: "https://quay.io/biocontainers/mulled-v2-509311a44630c01d9cb7d2ac5727725f51ea43af@sha256:399ff3c857705b64fe9482b09db108ebd5f54bd6ca2a3ff91d923ed2b8c3a4ec"
