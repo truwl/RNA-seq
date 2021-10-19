@@ -51,8 +51,7 @@ gffread: "quay.io/biocontainers/gffread:0.9.12--0"
 # quay.io/biocontainers/mulled-v2-a97e90b3b802d1da3d6958e0867610c718cb5eb1
 # hisat2=2.2.0, samtools=1.10.
 #hisat2: "quay.io/biocontainers/mulled-v2-a97e90b3b802d1da3d6958e0867610c718cb5eb1:2880dd9d8ad0a7b221d4eacda9a818e92983128d-0"
-#hisat2: "quay.io/biocontainers/mulled-v2-a97e90b3b802d1da3d6958e0867610c718cb5eb1@sha256:298f55eee58eca502c8f505fc9a74163e47a07220e3b8bbde60302d46efe2c8f"
-hisat2: "quay.io/biocontainers/hisat2@sha256:42fba60a5474dbb7f3c5686dfbe08b82b396519119926dfb2b9202f86b87bdcd"
+hisat2: "quay.io/biocontainers/mulled-v2-a97e90b3b802d1da3d6958e0867610c718cb5eb1@sha256:298f55eee58eca502c8f505fc9a74163e47a07220e3b8bbde60302d46efe2c8f"
 
 htseq: "quay.io/biocontainers/htseq:0.12.4--py37h0498b6d_2"
 multiqc: "quay.io/biocontainers/multiqc:1.9--pyh9f0ad1d_0"
