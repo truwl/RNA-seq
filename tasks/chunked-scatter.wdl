@@ -47,9 +47,11 @@ task ChunkedScatter {
     }
 
     output {
-        Array[File] scatters = read_lines(stdout())
+        Array[File] scatters = "scatters/scatter-0.bed"
+        #read_lines(stdout())
     }
-
+            
+            
     runtime {
         cpu: 1
         memory: memory
