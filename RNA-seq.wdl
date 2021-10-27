@@ -187,6 +187,7 @@ workflow RNAseq {
   
         IndexedBamFile markdupBams = {"file": sampleJobs.outputBam, "index": sampleJobs.outputBamIndex}
   
+        # leipzig splitSplicedReads = false
         if (variantCalling) {
             call preprocess.GatkPreprocess as preprocessing {
                 input:
@@ -194,7 +195,7 @@ workflow RNAseq {
                     bamIndex = sampleJobs.outputBamIndex,
                     outputDir = outputDir + "/samples/" + sample.id + "/",
                     bamName = sample.id + ".markdup.bqsr",
-                    splitSplicedReads = true,
+                    splitSplicedReads = false,
                     dbsnpVCF = select_first([dbsnpVCF]),
                     dbsnpVCFIndex = select_first([dbsnpVCFIndex]),
                     referenceFasta = referenceFasta,

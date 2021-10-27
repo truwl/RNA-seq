@@ -1,29 +1,44 @@
 {
-    "RNAseq.sampleConfigFile": "tests/samplesheets/Rna3PairedEnd.yml",
-    "RNAseq.dockerImagesFile": "dockerImages.yml",
-    "RNAseq.referenceFasta": "tests/data/reference/reference.fasta",
-    "RNAseq.referenceFastaFai": "tests/data/reference/reference.fasta.fai",
-    "RNAseq.referenceFastaDict": "tests/data/reference/reference.dict",
+  "RNAseq.sampleConfig": {
+          "samples": [
+              {
+                  "id": "rna3-paired-end",
+                  "gender": "M",
+                  "readgroups": [
+                      {
+                          "R1": "https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/rna3/R1.fq.gz",
+                          "R2": "https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/rna3/R2.fq.gz",
+                          "id": "lib1",
+                          "lib_id": "rg1"
+                      }
+                  ]
+              }
+          ]
+      },
+    "RNAseq.dockerImagesFile": "https://raw.githubusercontent.com/truwl/biowdl-rna-seq/develop/dockerImages.yml",
+    "RNAseq.referenceFasta": "https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/reference/reference.fasta",
+    "RNAseq.referenceFastaFai": "https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/reference/reference.fasta.fai",
+    "RNAseq.referenceFastaDict": "https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/reference/reference.dict",
     "RNAseq.strandedness": "None",
     "RNAseq.hisat2Index": [
-        "tests/data/reference/hisat2/reference.1.ht2",
-        "tests/data/reference/hisat2/reference.2.ht2",
-        "tests/data/reference/hisat2/reference.3.ht2",
-        "tests/data/reference/hisat2/reference.4.ht2",
-        "tests/data/reference/hisat2/reference.5.ht2",
-        "tests/data/reference/hisat2/reference.6.ht2",
-        "tests/data/reference/hisat2/reference.7.ht2",
-        "tests/data/reference/hisat2/reference.8.ht2"
+        "gs://truwl-internal-inputs/biowdl/tests/data/reference/hisat2/reference.1.ht2",
+        "gs://truwl-internal-inputs/biowdl/tests/data/reference/hisat2/reference.2.ht2",
+        "gs://truwl-internal-inputs/biowdl/tests/data/reference/hisat2/reference.3.ht2",
+        "gs://truwl-internal-inputs/biowdl/tests/data/reference/hisat2/reference.4.ht2",
+        "gs://truwl-internal-inputs/biowdl/tests/data/reference/hisat2/reference.5.ht2",
+        "gs://truwl-internal-inputs/biowdl/tests/data/reference/hisat2/reference.6.ht2",
+        "gs://truwl-internal-inputs/biowdl/tests/data/reference/hisat2/reference.7.ht2",
+        "gs://truwl-internal-inputs/biowdl/tests/data/reference/hisat2/reference.8.ht2"
     ],
     "RNAseq.variantCalling": true,
     "RNAseq.lncRNAdetection": true,
-    "RNAseq.cpatLogitModel": "tests/data/CPAT/Human_logitModel.RData",
-    "RNAseq.cpatHex": "tests/data/CPAT/Human_Hexamer.tsv",
+    "RNAseq.cpatLogitModel": "https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/CPAT/Human_logitModel.RData",
+    "RNAseq.cpatHex": "https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/CPAT/Human_Hexamer.tsv",
     "RNAseq.lncRNAdatabases": [
-        "tests/data/reference/reference.gtf"
+        "https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/reference/reference.gtf"
     ],
-    "RNAseq.refflatFile": "tests/data/reference/reference.refflat",
-    "RNAseq.referenceGtfFile": "tests/data/reference/reference.gtf",
-    "RNAseq.dbsnpVCF": "tests/data/wgs2.vcf.gz",
-    "RNAseq.dbsnpVCFIndex": "tests/data/wgs2.vcf.gz.tbi"
+    "RNAseq.refflatFile": "https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/reference/reference.refflat",
+    "RNAseq.referenceGtfFile": "https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/reference/reference.gtf",
+    "RNAseq.dbsnpVCF": "https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/wgs2.vcf.gz",
+    "RNAseq.dbsnpVCFIndex": "https://raw.githubusercontent.com/biowdl/RNA-seq/develop/tests/data/wgs2.vcf.gz.tbi"
 }
