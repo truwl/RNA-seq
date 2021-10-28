@@ -174,9 +174,17 @@ task BaseRecalibrator {
     command {
         set -e
         mkdir -p "$(dirname ~{recalibrationReportPath})"
+        
+        refName=`basename "~{referenceFasta}"`
+        ln -s "~{referenceFasta}" "$refName"
+        refDictName=`basename "~{referenceFastaDict}"`
+        ln -s "~{referenceFastaDict}" "$refDictName"
+        refFaiName=`basename "~{referenceFastaFai}"`
+        ln -s "~{referenceFastaFai}" "$refFaiName"
+        
         gatk --java-options '-Xmx~{javaXmxMb}M -XX:ParallelGCThreads=1' \
         BaseRecalibrator \
-        -R ~{referenceFasta} \
+        -R $refName \
         -I ~{inputBam} \
         --use-original-qualities \
         -O ~{recalibrationReportPath} \

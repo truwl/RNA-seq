@@ -105,13 +105,20 @@ task ApplyBQSR {
     }
 
     command {
+        refName=`basename "~{referenceFasta}"`
+        ln -s "~{referenceFasta}" "$refName"
+        refDictName=`basename "~{referenceFastaDict}"`
+        ln -s "~{referenceFastaDict}" "$refDictName"
+        refFaiName=`basename "~{referenceFastaFai}"`
+        ln -s "~{referenceFastaFai}" "$refFaiName"
+        
         set -e
         mkdir -p "$(dirname ~{outputBamPath})"
         gatk --java-options '-Xmx~{javaXmxMb}M -XX:ParallelGCThreads=1' \
         ApplyBQSR \
         --create-output-bam-md5 \
         --add-output-sam-program-record \
-        -R ~{referenceFasta} \
+        -R $refName \
         -I ~{inputBam} \
         --use-original-qualities \
         -O ~{outputBamPath} \
