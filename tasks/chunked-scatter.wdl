@@ -103,7 +103,7 @@ task ScatterRegions {
     }
 
     output {
-        Array[File] scatters = ["scatters/scatter-0.bed"]
+        Array[File] scatters = "scatters/scatter-0.bed"
         #read_lines(stdout())
     }
     

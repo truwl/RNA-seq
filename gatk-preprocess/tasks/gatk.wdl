@@ -170,7 +170,7 @@ task BaseRecalibrator {
         Int timeMinutes = 120 # This will likely be used with intervals, as such size based estimation can't be used.
         String dockerImage = "quay.io/biocontainers/gatk4:4.1.8.0--py38h37ae868_0"
     }
-
+    
     command {
         set -e
         mkdir -p "$(dirname ~{recalibrationReportPath})"
@@ -182,6 +182,8 @@ task BaseRecalibrator {
         refFaiName=`basename "~{referenceFastaFai}"`
         ln -s "~{referenceFastaFai}" "$refFaiName"
         
+        
+        ln -s `dirname "{firstIndex}"
         gatk --java-options '-Xmx~{javaXmxMb}M -XX:ParallelGCThreads=1' \
         BaseRecalibrator \
         -R $refName \

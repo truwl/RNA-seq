@@ -44,7 +44,8 @@ task ChunkedScatter {
     }
 
     output {
-        Array[File] scatters = read_lines(stdout())
+        Array[File] scatters = glob("scatters/*.bed")
+        #read_lines(stdout())
     }
 
     runtime {
@@ -77,7 +78,7 @@ task ScatterRegions {
         Int? scatterSize
         Int timeMinutes = 2
         String memory = "256M"
-        String dockerImage = "quay.io/biocontainers/chunked-scatter:0.2.0--py_0"
+        String dockerImage = "quay.io/biocontainers/chunked-scatter:1.0.0--py_0"
     }
 
     String finalSize = if defined(scatterSize) then "~{scatterSize}" else "~{scatterSizeMillions}000000"
@@ -92,7 +93,8 @@ task ScatterRegions {
     }
 
     output {
-        Array[File] scatters = read_lines(stdout())
+        Array[File] scatters = glob("scatters/*.bed")
+        #read_lines(stdout())
     }
     
     runtime {
