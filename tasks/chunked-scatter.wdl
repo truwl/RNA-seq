@@ -47,7 +47,7 @@ task ChunkedScatter {
     }
 
     output {
-        Array[File] scatters = "scatters/scatter-0.bed"
+        Array[File] scatters = glob("scatters/*.bed")
         #read_lines(stdout())
     }
             
@@ -103,7 +103,7 @@ task ScatterRegions {
     }
 
     output {
-        Array[File] scatters = "scatters/scatter-0.bed"
+        Array[File] scatters = glob("scatters/*.bed")
         #read_lines(stdout())
     }
     

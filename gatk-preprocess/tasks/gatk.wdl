@@ -182,8 +182,6 @@ task BaseRecalibrator {
         refFaiName=`basename "~{referenceFastaFai}"`
         ln -s "~{referenceFastaFai}" "$refFaiName"
         
-        
-        ln -s `dirname "{firstIndex}"
         gatk --java-options '-Xmx~{javaXmxMb}M -XX:ParallelGCThreads=1' \
         BaseRecalibrator \
         -R $refName \
